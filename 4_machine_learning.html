@@ -7800,11 +7800,13 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">'ignore'</span><span class="p">)</span>
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span><span class="p">,</span> <span class="n">GridSearchCV</span>
 
@@ -7837,7 +7839,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'./data/titanic_procesado.csv'</span><span class="p">)</span>
@@ -7851,7 +7853,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">'Survived'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -7868,7 +7870,7 @@ a.anchor-link {
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -7960,7 +7962,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">42</span><span class="p">)</span>
@@ -7973,7 +7975,20 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=54d52591">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8453a950">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Entrenamiento</p>
+<p>Ejecutemos el código completo que realizará el ajuste de cada uno de los modelos. Ejecútalo en tu notebook, y posteriormente analizaremos línea por línea.</p>
+<p>No te preocupes si ves algunos warnings en el output. Las advertencias no interfieren con el proceso de entrenamiento.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=633f7f2c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7981,83 +7996,182 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">modelos</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">'Logistic Regression'</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s1">'model'</span><span class="p">:</span> <span class="n">LogisticRegression</span><span class="p">(),</span>
-        <span class="s1">'params'</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s1">'model__C'</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">],</span>
-            <span class="s1">'model__max_iter'</span><span class="p">:</span> <span class="p">[</span><span class="mi">1000</span><span class="p">]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Definir los modelos y sus respectivos hiperparámetros para GridSearch</span>
+<span class="n">modelos</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">'Regresión Logística'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">'modelo'</span><span class="p">:</span> <span class="n">LogisticRegression</span><span class="p">(),</span>
+        <span class="s1">'parametros'</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'C'</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span>
+            <span class="s1">'penalty'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'l1'</span><span class="p">,</span> <span class="s1">'l2'</span><span class="p">],</span>
+            <span class="s1">'solver'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'liblinear'</span><span class="p">,</span> <span class="s1">'saga'</span><span class="p">],</span>
+            <span class="s1">'max_iter'</span><span class="p">:</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">1000</span><span class="p">]</span>
         <span class="p">}</span>
     <span class="p">},</span>
-    <span class="s1">'Support Vector Classifier'</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s1">'model'</span><span class="p">:</span> <span class="n">SVC</span><span class="p">(),</span>
-        <span class="s1">'params'</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s1">'model__kernel'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'linear'</span><span class="p">,</span> <span class="s1">'poly'</span><span class="p">,</span> <span class="s1">'rbf'</span><span class="p">,</span> <span class="s1">'sigmoid'</span><span class="p">],</span>
-            <span class="s1">'model__C'</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+    <span class="s1">'Clasificador de Vectores de Soporte'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">'modelo'</span><span class="p">:</span> <span class="n">SVC</span><span class="p">(),</span>
+        <span class="s1">'parametros'</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'kernel'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'linear'</span><span class="p">,</span> <span class="s1">'poly'</span><span class="p">,</span> <span class="s1">'rbf'</span><span class="p">,</span> <span class="s1">'sigmoid'</span><span class="p">],</span>
+            <span class="s1">'C'</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
         <span class="p">}</span>
     <span class="p">},</span>
-    <span class="s1">'Decision Tree Classifier'</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s1">'model'</span><span class="p">:</span> <span class="n">DecisionTreeClassifier</span><span class="p">(),</span>
-        <span class="s1">'params'</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s1">'model__splitter'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'best'</span><span class="p">,</span> <span class="s1">'random'</span><span class="p">],</span>
-            <span class="s1">'model__max_depth'</span><span class="p">:</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+    <span class="s1">'Clasificador de Árbol de Decisión'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">'modelo'</span><span class="p">:</span> <span class="n">DecisionTreeClassifier</span><span class="p">(),</span>
+        <span class="s1">'parametros'</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'splitter'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'best'</span><span class="p">,</span> <span class="s1">'random'</span><span class="p">],</span>
+            <span class="s1">'max_depth'</span><span class="p">:</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
         <span class="p">}</span>
     <span class="p">},</span>
-    <span class="s1">'Random Forest Classifier'</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s1">'model'</span><span class="p">:</span> <span class="n">RandomForestClassifier</span><span class="p">(),</span>
-        <span class="s1">'params'</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s1">'model__n_estimators'</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span>
-            <span class="s1">'model__max_depth'</span><span class="p">:</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
-            <span class="s1">'model__max_features'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'auto'</span><span class="p">,</span> <span class="s1">'sqrt'</span><span class="p">,</span> <span class="s1">'log2'</span><span class="p">]</span>
+    <span class="s1">'Clasificador de Bosques Aleatorios'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">'modelo'</span><span class="p">:</span> <span class="n">RandomForestClassifier</span><span class="p">(),</span>
+        <span class="s1">'parametros'</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'n_estimators'</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span>
+            <span class="s1">'max_depth'</span><span class="p">:</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
+            <span class="s1">'max_features'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'sqrt'</span><span class="p">,</span> <span class="s1">'log2'</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span>
         <span class="p">}</span>
     <span class="p">},</span>
-    <span class="s1">'Gradient Boosting Classifier'</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s1">'model'</span><span class="p">:</span> <span class="n">GradientBoostingClassifier</span><span class="p">(),</span>
-        <span class="s1">'params'</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s1">'model__n_estimators'</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span>
-            <span class="s1">'model__max_depth'</span><span class="p">:</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+    <span class="s1">'Clasificador de Gradient Boosting'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">'modelo'</span><span class="p">:</span> <span class="n">GradientBoostingClassifier</span><span class="p">(),</span>
+        <span class="s1">'parametros'</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'n_estimators'</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span>
+            <span class="s1">'max_depth'</span><span class="p">:</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
         <span class="p">}</span>
     <span class="p">},</span>
-    <span class="s1">'AdaBoost Classifier'</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s1">'model'</span><span class="p">:</span> <span class="n">AdaBoostClassifier</span><span class="p">(),</span>
-        <span class="s1">'params'</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s1">'model__n_estimators'</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
+    <span class="s1">'Clasificador AdaBoost'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">'modelo'</span><span class="p">:</span> <span class="n">AdaBoostClassifier</span><span class="p">(),</span>
+        <span class="s1">'parametros'</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'n_estimators'</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
         <span class="p">}</span>
     <span class="p">},</span>
-    <span class="s1">'K-Nearest Neighbors Classifier'</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s1">'model'</span><span class="p">:</span> <span class="n">KNeighborsClassifier</span><span class="p">(),</span>
-        <span class="s1">'params'</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s1">'model__n_neighbors'</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+    <span class="s1">'Clasificador K-Nearest Neighbors'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">'modelo'</span><span class="p">:</span> <span class="n">KNeighborsClassifier</span><span class="p">(),</span>
+        <span class="s1">'parametros'</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'n_neighbors'</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
         <span class="p">}</span>
     <span class="p">},</span>
-    <span class="s1">'XGBoost Classifier'</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s1">'model'</span><span class="p">:</span> <span class="n">XGBClassifier</span><span class="p">(),</span>
-        <span class="s1">'params'</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s1">'model__n_estimators'</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span>
-            <span class="s1">'model__max_depth'</span><span class="p">:</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+    <span class="s1">'Clasificador XGBoost'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">'modelo'</span><span class="p">:</span> <span class="n">XGBClassifier</span><span class="p">(),</span>
+        <span class="s1">'parametros'</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'n_estimators'</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span>
+            <span class="s1">'max_depth'</span><span class="p">:</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
         <span class="p">}</span>
     <span class="p">},</span>
-    <span class="s1">'LGBM Classifier'</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s1">'model'</span><span class="p">:</span> <span class="n">LGBMClassifier</span><span class="p">(),</span>
-        <span class="s1">'params'</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s1">'model__n_estimators'</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span>
-            <span class="s1">'model__max_depth'</span><span class="p">:</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
-            <span class="s1">'model__learning_rate'</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">],</span>
-            <span class="s1">'model__verbose'</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="s1">'Clasificador LGBM'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">'modelo'</span><span class="p">:</span> <span class="n">LGBMClassifier</span><span class="p">(),</span>
+        <span class="s1">'parametros'</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'n_estimators'</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span>
+            <span class="s1">'max_depth'</span><span class="p">:</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+            <span class="s1">'learning_rate'</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">],</span>
+            <span class="s1">'verbose'</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
         <span class="p">}</span>
     <span class="p">},</span>
     <span class="s1">'GaussianNB'</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s1">'model'</span><span class="p">:</span> <span class="n">GaussianNB</span><span class="p">(),</span>
-        <span class="s1">'params'</span><span class="p">:</span> <span class="p">{}</span>
+        <span class="s1">'modelo'</span><span class="p">:</span> <span class="n">GaussianNB</span><span class="p">(),</span>
+        <span class="s1">'parametros'</span><span class="p">:</span> <span class="p">{}</span>
     <span class="p">},</span>
-    <span class="s1">'Naive Bayes Classifier'</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s1">'model'</span><span class="p">:</span> <span class="n">BernoulliNB</span><span class="p">(),</span>
-        <span class="s1">'params'</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s1">'model__alpha'</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">]</span>
+    <span class="s1">'Clasificador Naive Bayes'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">'modelo'</span><span class="p">:</span> <span class="n">BernoulliNB</span><span class="p">(),</span>
+        <span class="s1">'parametros'</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'alpha'</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">]</span>
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
+
+<span class="c1"># Inicializar variables para almacenar los puntajes de los modelos y el mejor estimador</span>
+<span class="n">puntajes_modelos</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">mejor_precision</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">mejor_estimador</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">mejor_modelo</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">estimadores</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="c1"># Iterar sobre cada modelo y sus hiperparámetros</span>
+<span class="k">for</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">info_modelo</span> <span class="ow">in</span> <span class="n">modelos</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Entrenando: </span><span class="si">{</span><span class="n">nombre</span><span class="si">}</span><span class="s2">..."</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="c1"># Inicializar GridSearchCV con el modelo y los hiperparámetros</span>
+    <span class="n">grid_search</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span>
+        <span class="n">estimator</span><span class="o">=</span><span class="n">info_modelo</span><span class="p">[</span><span class="s1">'modelo'</span><span class="p">],</span>
+        <span class="n">param_grid</span><span class="o">=</span><span class="n">info_modelo</span><span class="p">[</span><span class="s1">'parametros'</span><span class="p">],</span>
+        <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+        <span class="n">scoring</span><span class="o">=</span><span class="s1">'accuracy'</span><span class="p">,</span>
+        <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+        <span class="n">n_jobs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Ajustar GridSearchCV con los datos de entrenamiento</span>
+    <span class="n">grid_search</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+    
+    <span class="c1"># Hacer predicciones con el modelo ajustado</span>
+    <span class="n">y_pred</span> <span class="o">=</span> <span class="n">grid_search</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+    
+    <span class="c1"># Calcular la precisión de las predicciones</span>
+    <span class="n">precision</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+    
+    <span class="c1"># Almacenar los resultados del modelo</span>
+    <span class="n">puntajes_modelos</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+        <span class="s1">'Modelo'</span><span class="p">:</span> <span class="n">nombre</span><span class="p">,</span>
+        <span class="s1">'Precisión'</span><span class="p">:</span> <span class="n">precision</span>
+    <span class="p">})</span>
+
+    <span class="n">estimadores</span><span class="p">[</span><span class="n">nombre</span><span class="p">]</span> <span class="o">=</span> <span class="n">grid_search</span><span class="o">.</span><span class="n">best_estimator_</span>
+    
+    <span class="c1"># Actualizar el mejor modelo si la precisión actual es mayor que la mejor precisión encontrada</span>
+    <span class="k">if</span> <span class="n">precision</span> <span class="o">&gt;</span> <span class="n">mejor_precision</span><span class="p">:</span>
+        <span class="n">mejor_modelo</span> <span class="o">=</span> <span class="n">nombre</span>
+        <span class="n">mejor_precision</span> <span class="o">=</span> <span class="n">precision</span>
+        <span class="n">mejor_estimador</span> <span class="o">=</span> <span class="n">grid_search</span><span class="o">.</span><span class="n">best_estimator_</span>
+
+<span class="c1"># Convertir los resultados a un DataFrame para una mejor visualización</span>
+<span class="n">metricas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">puntajes_modelos</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">'Precisión'</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Imprimir el rendimiento de los modelos de clasificación</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Rendimiento de los modelos de clasificación"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">metricas</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="c1"># Imprimir el mejor modelo y su precisión</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'---------------------------------------------------'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"MEJOR MODELO DE CLASIFICACIÓN"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Modelo: </span><span class="si">{</span><span class="n">mejor_modelo</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Precisión: </span><span class="si">{</span><span class="n">mejor_precision</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Entrenando: Regresión Logística...
+Entrenando: Clasificador de Vectores de Soporte...
+Entrenando: Clasificador de Árbol de Decisión...
+Entrenando: Clasificador de Bosques Aleatorios...
+Entrenando: Clasificador de Gradient Boosting...
+Entrenando: Clasificador AdaBoost...
+Entrenando: Clasificador K-Nearest Neighbors...
+Entrenando: Clasificador XGBoost...
+Entrenando: Clasificador LGBM...
+Entrenando: GaussianNB...
+Entrenando: Clasificador Naive Bayes...
+Rendimiento de los modelos de clasificación
+                                 Modelo  Precisión
+4     Clasificador de Gradient Boosting       0.83
+6      Clasificador K-Nearest Neighbors       0.83
+7                  Clasificador XGBoost       0.82
+8                     Clasificador LGBM       0.81
+3    Clasificador de Bosques Aleatorios       0.80
+1   Clasificador de Vectores de Soporte       0.80
+2     Clasificador de Árbol de Decisión       0.80
+0                   Regresión Logística       0.79
+5                 Clasificador AdaBoost       0.79
+10             Clasificador Naive Bayes       0.79
+9                            GaussianNB       0.76
+---------------------------------------------------
+MEJOR MODELO DE CLASIFICACIÓN
+Modelo: Clasificador de Gradient Boosting
+Precisión: 0.83
+</pre>
 </div>
 </div>
 </div>
